@@ -65,11 +65,11 @@ def parse_items(element: HtmlElement) -> List[Item]:
                 './/span[@class="sc-lecturer"]/text()')[0].split(', ')
         except IndexError:
             teachers = []
-        res.append(
-            Item(time=time,
-                 item_type=item_type,
-                 name=name,
-                 place=place,
-                 teachers=teachers)
-        )
+        item = Item(time=time,
+                    item_type=item_type,
+                    name=name,
+                    place=place,
+                    teachers=teachers)
+        print(item)
+        res.append(item)
     return res
